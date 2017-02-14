@@ -162,3 +162,4 @@ jspm_packages
 
 
 # End of https://www.gitignore.io/api/webstorm,node
+public/dist
