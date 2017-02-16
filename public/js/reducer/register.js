@@ -1,3 +1,7 @@
-/**
- * Created by liyan on 17-2-16.
- */
+module.exports = (state = {},action) => {
+    switch(action.type){
+        case 'ADD_USENAME':
+            console.log(action.data);
+    }
+    return {}
+};

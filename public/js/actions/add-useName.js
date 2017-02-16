@@ -1,3 +1,10 @@
-/**
- * Created by liyan on 17-2-16.
- */
+const addUseName = (data) => {
+    return {
+        type: 'ADD_USENAME',
+        data: data
+    }
+};
+
+module.exports = {
+    addUseName
+};
