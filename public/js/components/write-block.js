@@ -7,7 +7,9 @@ export default class WriteBlock extends Component {
         const time = this.refs.blockTime.value;
         const author = this.refs.blockAuthor.value;
         console.log(title, content, time, author);
+        this.props.onSubmit({title, time, content, author});
     }
+
     render() {
         return <div>
             <div>
