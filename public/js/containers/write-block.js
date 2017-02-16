@@ -2,6 +2,12 @@ import {connect} from 'react-redux';
 import WriteBlock from '../components/write-block';
 import actions from '../actions/add-block';
 
+const mapStateToProps = (state) => {
+    return {
+        isSaveSuccess: state.addBlock.isSaveSuccess
+    }
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit: (data) => {
@@ -9,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 };
-export default connect(() => {return {}},mapDispatchToProps)(WriteBlock);
+export default connect(mapStateToProps, mapDispatchToProps)(WriteBlock);
