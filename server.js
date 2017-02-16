@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 
 const app = new express();
+const addBlock = require('./server/routers/add-block');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -14,13 +15,13 @@ app.use(session({
     saveUninitialized: true,
 }));
 
+app.use('/', addBlock);
+
 app.get('*', (req, res) => {
     "use strict";
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
-app.post('/addBlock', (req, res) => {
-    console.log(req.body);
-});
+
 var server = app.listen(3000, () => {
     console.log('listening at port %s', server.address().port);
 });
