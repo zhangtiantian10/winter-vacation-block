@@ -8,5 +8,8 @@ router.post('/addBlock', (req, res) => {
     console.log(datas);
     res.status(201).end();
 });
+router.post('/addUseName',(req,res) => {
+    console.log(req.body);
+})
 
 module.exports = router;
