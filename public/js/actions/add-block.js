@@ -1,6 +1,6 @@
 const addBlock = (data) => {
     return {
-        type: 'ADDBLOCK',
+        type: 'ADD_BLOCK',
         data: data
     }
 };

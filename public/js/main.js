@@ -6,7 +6,9 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from "./containers/App";
 import WriteBlock from "./containers/write-block";
 import reducer from "./reducer/index"
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+import middleAddBlock from "./middlewares/add-block";
+
+const createStoreWithMiddleware = applyMiddleware(middleAddBlock)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
