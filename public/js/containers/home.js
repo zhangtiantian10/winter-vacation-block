@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getAllBlocks: () => {
-            dispatch(actions.getAllBlocks);
+            dispatch(actions.getAllBlocks());
         }
     };
 };

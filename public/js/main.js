@@ -8,9 +8,10 @@ import reducer from "./reducer/index"
 import middleAddBlock from "./middlewares/add-block";
 import Register from "./containers/register";
 import middleAddUseName from "./middlewares/register";
+import middleGetAllBlocks from "./middlewares/get-blocks";
 import Home from './containers/home';
 
-const createStoreWithMiddleware = applyMiddleware(middleAddBlock, middleAddUseName)(createStore);
+const createStoreWithMiddleware = applyMiddleware(middleAddBlock, middleAddUseName, middleGetAllBlocks)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

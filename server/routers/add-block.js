@@ -12,4 +12,8 @@ router.post('/addUseName',(req,res) => {
     console.log(req.body);
 })
 
+router.get('/getAllBlocks', (req, res) => {
+    res.send({blocks: datas});
+});
+
 module.exports = router;
