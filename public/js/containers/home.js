@@ -3,8 +3,9 @@ import Home from '../components/home';
 import actions from '../actions/home';
 
 const mapStateToProps = (state) => {
-    console.log(state.getAllBlocks.blocks);
-    return {};
+    return {
+        blocks: state.getAllBlocks.blocks
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
