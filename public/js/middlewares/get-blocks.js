@@ -5,7 +5,7 @@ export default store => next => action => {
     if(action.type === "ALL_BLOCKS") {
         request.get("/getAllBlocks")
             .end((err,res) => {
-                console.log(res.body.blocks);
+                next({type: "GET_ALL", blocks: res.body.blocks});
             });
     } else
         next(action);

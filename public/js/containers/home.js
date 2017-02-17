@@ -3,6 +3,7 @@ import Home from '../components/home';
 import actions from '../actions/home';
 
 const mapStateToProps = (state) => {
+    console.log(state.getAllBlocks.blocks);
     return {};
 };
 
