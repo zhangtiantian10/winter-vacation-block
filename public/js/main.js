@@ -10,6 +10,7 @@ import Register from "./containers/register";
 import middleAddUseName from "./middlewares/register";
 import middleGetAllBlocks from "./middlewares/get-blocks";
 import Home from './containers/home';
+import Login from './containers/login';
 
 const createStoreWithMiddleware = applyMiddleware(middleAddBlock, middleAddUseName, middleGetAllBlocks)(createStore);
 
@@ -22,5 +23,6 @@ render(
             </Route>
             <Route path="writeBlock" component={WriteBlock}/>
             <Route path="register" component={Register}/>
+            <Route path="login" component={Login}/>
         </Router>
     </Provider>, document.getElementById('app'));
