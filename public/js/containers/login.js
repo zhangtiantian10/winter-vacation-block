@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getAllUsers:()=>{
-            dispatch(actions.getAllUsers())
+            dispatch(actions.getAllUsers());
         }
     }
 };

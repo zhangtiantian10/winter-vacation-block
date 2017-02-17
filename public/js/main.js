@@ -11,8 +11,9 @@ import middleAddUseName from "./middlewares/register";
 import middleGetAllBlocks from "./middlewares/get-blocks";
 import Home from './containers/home';
 import Login from './containers/login';
+import middleGetAllUsers from './middlewares/get-users';
 
-const createStoreWithMiddleware = applyMiddleware(middleAddBlock, middleAddUseName, middleGetAllBlocks)(createStore);
+const createStoreWithMiddleware = applyMiddleware(middleAddBlock, middleAddUseName, middleGetAllBlocks,middleGetAllUsers)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
