@@ -10,7 +10,7 @@ let datas = [
     }
 ];
 
-router.post('/addBlock', (req, res) => {
+router.post('/addBlog', (req, res) => {
     datas.push(req.body);
     console.log(datas);
     res.status(201).end();
@@ -19,8 +19,8 @@ router.post('/addUseName',(req,res) => {
     console.log(req.body);
 })
 
-router.get('/getAllBlocks', (req, res) => {
-    res.send({blocks: datas});
+router.get('/getAllBlogs', (req, res) => {
+    res.send({blogs: datas});
 });
 
 module.exports = router;

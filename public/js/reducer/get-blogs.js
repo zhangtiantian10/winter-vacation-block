@@ -1,9 +1,9 @@
-module.exports = (state = {blocks: []}, action) => {
+module.exports = (state = {blogs: []}, action) => {
     switch (action.type) {
         case "GET_ALL":
-            state.blocks = action.blocks;
+            state.blogs = action.blogs;
             return {
-                blocks: [...state.blocks]
+                blogs: [...state.blogs]
             };
         default:
             return state;

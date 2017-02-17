@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import addBlock from './add-block';
+import addBlog from './add-blog';
 import addUseName from "./register";
-import getAllBlocks from "./get-blocks";
+import getAllBlogs from "./get-blogs";
 
 export default combineReducers({
-    addBlock,
+    addBlog,
     addUseName,
-    getAllBlocks
+    getAllBlogs
 });

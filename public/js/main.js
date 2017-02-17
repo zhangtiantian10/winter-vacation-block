@@ -3,15 +3,15 @@ import {render} from "react-dom";
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from "react-redux";
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
-import WriteBlock from "./containers/write-block";
+import WriteBlog from "./containers/write-blog";
 import reducer from "./reducer/index"
-import middleAddBlock from "./middlewares/add-block";
+import middleAddBlog from "./middlewares/add-blog";
 import Register from "./containers/register";
 import middleAddUseName from "./middlewares/register";
-import middleGetAllBlocks from "./middlewares/get-blocks";
+import middleGetAllBlogs from "./middlewares/get-blogs";
 import Home from './containers/home';
 
-const createStoreWithMiddleware = applyMiddleware(middleAddBlock, middleAddUseName, middleGetAllBlocks)(createStore);
+const createStoreWithMiddleware = applyMiddleware(middleAddBlog, middleAddUseName, middleGetAllBlogs)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -20,7 +20,7 @@ render(
         <Router history={browserHistory}>
             <Route path="/" component={Home}>
             </Route>
-            <Route path="writeBlock" component={WriteBlock}/>
+            <Route path="writeBlog" component={WriteBlog}/>
             <Route path="register" component={Register}/>
         </Router>
     </Provider>, document.getElementById('app'));

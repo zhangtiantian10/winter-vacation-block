@@ -1,9 +1,9 @@
-const getAllBlocks = () => {
+const getAllBlogs = () => {
     return {
-        type: "ALL_BLOCKS"
+        type: "ALL_BLOGS"
     }
 };
 
 module.exports = {
-    getAllBlocks
+    getAllBlogs
 };
