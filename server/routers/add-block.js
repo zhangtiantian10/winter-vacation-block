@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 let datas = [];
+let useName = [];
 
 router.post('/addBlock', (req, res) => {
     datas.push(req.body);
@@ -9,7 +10,9 @@ router.post('/addBlock', (req, res) => {
     res.status(201).end();
 });
 router.post('/addUseName',(req,res) => {
-    console.log(req.body);
+    useName.push(req.body);
+    console.log(useName);
+    res.status(201).end();
 })
 
 router.get('/getAllBlocks', (req, res) => {
