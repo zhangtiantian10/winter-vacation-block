@@ -3,7 +3,7 @@ import Login from "../components/login";
 import actions from "../actions/login";
 
 const mapStateToProps = (state) => {
-    return {};
+    return {users:state.getAllUsers.users};
 };
 
 const mapDispatchToProps = (dispatch) => {
