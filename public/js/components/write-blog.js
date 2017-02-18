@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
 
 export default class WriteBlock extends Component {
-    addBlog() {
-        const title = this.refs.blogTitle.value;
-        const content = document.getElementById("blogContent").value;
-        const time = this.refs.blogTime.value;
-        const author = this.refs.blogAuthor.value;
+    addBlock() {
+        const title = this.refs.blockTitle.value;
+        const content = document.getElementById("blockContent").value;
+        const time = this.refs.blockTime.value;
+        const author = this.refs.blockAuthor.value;
         console.log(title, content, time, author);
         this.props.onSubmit({title, time, content, author});
     }
@@ -21,22 +21,22 @@ export default class WriteBlock extends Component {
         return <div>
             <div>
                 标题：
-                <input type="text" id="blogTitle" ref="blogTitle"/>
+                <input type="text" id="blockTitle" ref="blockTitle"/>
             </div>
             <div>
                 内容：
-                <textarea name="blogContent" id="blogContent" cols="30" rows="5" ref="blogContent"></textarea>
+                <textarea name="blockContent" id="blockContent" cols="30" rows="5" ref="blockContent"></textarea>
             </div>
             <div>
                 时间：
-                <input type="text" id="blogTime" ref="blogTime"/>
+                <input type="text" id="blockTime" ref="blockTime"/>
             </div>
             <div>
                 作者：
-                <input type="text" id="blogAuthor" ref="blogAuthor"/>
+                <input type="text" id="blockAuthor" ref="blockAuthor"/>
             </div>
             <div>
-                <button onClick={this.addBlog.bind(this)}>完成</button>
+                <button onClick={this.addBlock.bind(this)}>完成</button>
             </div>
         </div>
     }
