@@ -2,8 +2,8 @@ import request from 'superagent';
 
 export default store => next => action => {
     console.log(2);
-    if(action.type === 'ADD_BLOCK') {
-        request.post('/addBlock')
+    if(action.type === 'ADD_BLOG') {
+        request.post('/addBlog')
             .send(action.data)
             .end((err,res) => {
           if(res.statusCode === 201) {

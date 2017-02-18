@@ -4,8 +4,12 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 
 const app = new express();
+<<<<<<< HEAD
 const addBlock = require('./server/routers/add-block');
 const addUser = require('./server/routers/add-user');
+=======
+const addBlock = require('./server/routers/add-blog');
+>>>>>>> 738d4852405b98ab2c8ac2e4999b4e21f155876b
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

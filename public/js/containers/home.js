@@ -4,14 +4,14 @@ import actions from '../actions/home';
 
 const mapStateToProps = (state) => {
     return {
-        blocks: state.getAllBlocks.blocks
+        blogs: state.getAllBlogs.blogs
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getAllBlocks: () => {
-            dispatch(actions.getAllBlocks());
+        getAllBlogs: () => {
+            dispatch(actions.getAllBlogs());
         }
     };
 };
