@@ -5,6 +5,7 @@ const session = require('express-session');
 
 const app = new express();
 const addBlock = require('./server/routers/add-block');
+const addUser = require('./server/routers/add-user');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,6 +17,7 @@ app.use(session({
 }));
 
 app.use('/', addBlock);
+app.use('/addUser',addUser);
 
 app.get('*', (req, res) => {
     "use strict";

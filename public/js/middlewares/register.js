@@ -2,7 +2,7 @@ import request from 'superagent';
 
 export default store => next => action => {
     if(action.type === 'ADD_USENAME') {
-        request.post('/addUseName')
+        request.post('/addUser/addUseName')
             .send(action.data)
             .end((err,res) => {
                 if(res.statusCode === 201) {
