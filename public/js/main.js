@@ -10,8 +10,10 @@ import Register from "./containers/register";
 import middleAddUseName from "./middlewares/register";
 import middleGetAllBlogs from "./middlewares/get-blogs";
 import Home from './containers/home';
+import Login from './containers/login';
+import middleGetAllUsers from './middlewares/get-users';
 
-const createStoreWithMiddleware = applyMiddleware(middleAddBlog, middleAddUseName, middleGetAllBlogs)(createStore);
+const createStoreWithMiddleware = applyMiddleware(middleAddBlog, middleAddUseName, middleGetAllBlogs,middleGetAllUsers)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -22,5 +24,6 @@ render(
             </Route>
             <Route path="writeBlog" component={WriteBlog}/>
             <Route path="register" component={Register}/>
+            <Route path="login" component={Login}/>
         </Router>
     </Provider>, document.getElementById('app'));

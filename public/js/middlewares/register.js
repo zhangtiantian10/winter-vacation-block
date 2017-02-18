@@ -6,9 +6,11 @@ export default store => next => action => {
             .send(action.data)
             .end((err,res) => {
                 if(res.statusCode === 201) {
-                    alert("保存成功！");
+                    alert("注册成功！");
+                    next({type: 'SAVE_SUCCESS'});
                 } else {
-                    alert("保存失败！");
+                    alert("注册失败！")
+                    next({type: 'SAVE_ERROR'});
                 }
             })
     } else {
