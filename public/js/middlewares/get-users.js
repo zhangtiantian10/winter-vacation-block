@@ -1,11 +1,11 @@
 import request from 'superagent';
 
 export default store => next => action => {
-    console.log(action.type);
+    console.log('login2');
     if(action.type === "ALL_USERS") {
-        request.get("/getAllUsers")
+        request.get("/addUser/getAllUsers")
             .end((err,res) => {
-                console.log(res.body.users)
+                next({type: "GET_ALLUSERS", users: res.body.users});
             });
     } else{
         next(action);
