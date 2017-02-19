@@ -1,0 +1,11 @@
+.center {
+  display: table;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lineHeight {
+    line-height: 35px;
+    font-size: 19px;
+}
