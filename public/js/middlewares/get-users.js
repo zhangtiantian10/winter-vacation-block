@@ -1,13 +1,22 @@
-import request from 'superagent';
+import request from "superagent";
 
-export default store => next => action => {
-    console.log('login2');
-    if(action.type === "ALL_USERS") {
-        request.get("/addUser/getAllUsers")
-            .end((err,res) => {
-                next({type: "GET_ALLUSERS", users: res.body.users});
-            });
-    } else{
-        next(action);
+export default store=> next=> action => {
+    console.log("store");
+    if (action.type === "LOGIN") {
+        console.log("action");
+        if(action.userName === ''){
+            alert('用户名不能为空')
+        }
+        else if (action.password === '') {
+            alert("密码不能为空");
+        }
+        else {
+            request.post('/addUser/section')
+                .send({name:action.userName, password:action.password})
+                .end((err, res) => {
+                    next({type: 'LOGIN', status: res.body.value})
+                });
+        }
     }
 }
+
