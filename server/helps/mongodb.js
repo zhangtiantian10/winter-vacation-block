@@ -1,3 +1,3 @@
-/**
- * Created by liyan on 17-2-20.
- */
+const MongoClient = require('mongodb').MongoClient;
+
+module.exports = MongoClient;
