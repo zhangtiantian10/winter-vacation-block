@@ -17,6 +17,8 @@ export default store=> next=> action => {
                     next({type: 'LOGIN', status: res.body.value})
                 });
         }
+    } else {
+        next(action);
     }
 }
 
