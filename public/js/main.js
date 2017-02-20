@@ -11,7 +11,7 @@ import middleAddUseName from "./middlewares/register";
 import middleGetAllBlogs from "./middlewares/get-blogs";
 import Home from './containers/home';
 import Login from './containers/login';
-import middleGetAllUsers from './middlewares/get-users';
+import middleGetAllUsers from './middlewares/login';
 import ReadBlog from './containers/read-blog';
 import EditBlog from './containers/edit-blog';
 

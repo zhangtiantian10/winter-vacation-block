@@ -1,18 +1,23 @@
-import {connect} from "react-redux";
-import Login from "../components/login";
-import actions from "../actions/login";
+import React, {PropTypes} from 'react';
+import {render} from 'react-dom';
+import Login from '../components/login';
+import {connect} from 'react-redux';
 
-const mapStateToProps = (state) => {
-    return {users:state.getAllUsers.users};
+Login.PropTypes = {
+    onJude: PropTypes.func.isRequied,
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchProps = (dispatch) => {
     return {
-        getAllUsers:()=>{
-            dispatch(actions.getAllUsers());
+        onJude: (userName, password)=> {
+            console.log('dispatch');
+            dispatch({type: "LOGIN", userName, password});
         }
     }
 };
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
 
+
+export default connect(()=> {
+    return {}
+}, mapDispatchProps)(Login);
 
