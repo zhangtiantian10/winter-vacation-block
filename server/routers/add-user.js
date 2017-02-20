@@ -1,22 +1,20 @@
+const insertUsers = require('../dbs/add-user');
+const findUsers = require('../dbs/find-users');
 const express = require('express');
+
 const router = express.Router();
 
-let users = [{userName:"liyan",password:'123'}];
-
-router.post('/addUseName',(req,res) => {
-    users.push(req.body);
-    console.log(users);
-    res.status(201).end();
-})
-
-router.post('/section', function (req, res) {
+router.post('/addUseName', function (req, res) {
     const userInformation = req.body;
-    users.map((user) => {
-        if(user.password != userInformation.password && user.useName != userInformation.password){
-            res.json({value: "用户名或密码错误，请重新输入"});
+    findUsers(userInformation, (result)=> {
+        if (result.length != 0) {
+            res.json({value: "用户已存在"});
         }
-        else{
-            res.json({value: "登录成功"});
+        else {
+            insertUsers(userInformation, (result)=> {
+                console.log(result);
+                res.json({value: "注册成功"});
+            });
         }
     });
 
