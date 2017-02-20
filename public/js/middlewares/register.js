@@ -7,10 +7,10 @@ export default store => next => action => {
             .end((err,res) => {
                 if(res.statusCode === 201) {
                     alert("注册成功！");
-                    next({type: 'SAVE_SUCCESS'});
+                    next({type: 'SAVE_SUCCESS_USER'});
                 } else {
                     alert("注册失败！")
-                    next({type: 'SAVE_ERROR'});
+                    next({type: 'SAVE_ERROR_USER'});
                 }
             })
     } else {
