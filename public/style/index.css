@@ -9,3 +9,13 @@
     line-height: 35px;
     font-size: 19px;
 }
+
+.inline{
+    display: inline;
+}
+
+.iconColor {
+    display: inline;
+    color: #777;
+    padding-left: 20px;
+}
