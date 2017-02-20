@@ -1,11 +1,11 @@
 module.exports = (state = {},action) => {
     switch(action.type){
-        case 'SAVE_SUCCESS':
+        case 'SAVE_SUCCESS_USER':
             console.log(action.data);
             return {
                 isSaveSuccess: true
             };
-        case 'SAVE_ERROR':
+        case 'SAVE_ERROR_USER':
             return {
                 isSaveSuccess: false
             };
