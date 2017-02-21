@@ -5,13 +5,8 @@ export default class Register extends Component {
         const useName=this.refs.useName.value;
         const password=document.getElementById("password").value;
         const confirmPassword=document.getElementById("confirmPassword").value;
-        console.log(useName,password);
-        if(password === confirmPassword){
-            this.props.onSubmit({useName,password});
-        }
-        else{
-            alert("两次输入的密码不同")
-        }
+        this.props.onSubmit({useName,password,confirmPassword});
+
     }
     render(){
         return <div className="row">
