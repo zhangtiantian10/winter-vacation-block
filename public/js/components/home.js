@@ -7,7 +7,7 @@ export default class Home extends Component {
     }
 
     jumpToEditPage(blog) {
-        const path = "editBlog?title=" + blog.title + "&content=" + blog.content + "&time=" + blog.time + "&author=" + blog.author;
+        const path = "editBlog?title=" + blog.title + "&content=" + blog.content + "&time=" + blog.time + "&author=" + blog.author + "&id=" + blog.id;
         browserHistory.push(path);
     }
 
@@ -16,7 +16,7 @@ export default class Home extends Component {
             <div className="col-md-10 col-md-offset-1">
                 <h3>博客列表：</h3>
                 {this.props.blogs.map((b, i) => {
-                    const path = "readBlog?title=" + b.title + "&content=" + b.content + "&time=" + b.time + "&author=" + b.author;
+                    const path = "readBlog?title=" + b.title + "&content=" + b.content + "&time=" + b.time + "&author=" + b.author + "&id=" + b.id;
                     return <div key={i}>
                         <div>
                             <h3 className="inline">

@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+let id = 1;
+
 let datas = [
     {
+        id: id,
         title: "今天真的很开心",
         content: "因为今天放假了，可以好好的睡懒觉了真的很开心",
         time: "2017-2-17 16:40",
@@ -11,7 +14,15 @@ let datas = [
 ];
 
 router.post('/addBlog', (req, res) => {
-    datas.push(req.body);
+    id++;
+    let blog = {
+        id: id,
+        title: req.body.title,
+        content: req.body.content,
+        time: req.body.time,
+        author: req.body.author
+    }
+    datas.push(blog);
     console.log(datas);
     res.status(201).end();
 });
