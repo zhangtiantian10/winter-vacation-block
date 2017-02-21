@@ -13,11 +13,6 @@ export default class Register extends Component {
             alert("两次输入的密码不同")
         }
     }
-    componentWillUpdate(nextProps) {
-        if (nextProps.isSaveSuccess) {
-            browserHistory.push('/');
-        }
-    }
     render(){
         return <div className="row">
             <div className="col-md-offset-4 col-md-4">
