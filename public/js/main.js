@@ -14,8 +14,9 @@ import Login from './containers/login';
 import middleGetAllUsers from './middlewares/login';
 import ReadBlog from './containers/read-blog';
 import EditBlog from './containers/edit-blog';
+import middleModifyBlog from './middlewares/modify-blog';
 
-const createStoreWithMiddleware = applyMiddleware(middleAddBlog, middleAddUseName, middleGetAllBlogs, middleGetAllUsers)(createStore);
+const createStoreWithMiddleware = applyMiddleware(middleAddBlog, middleAddUseName, middleGetAllBlogs, middleGetAllUsers, middleModifyBlog)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

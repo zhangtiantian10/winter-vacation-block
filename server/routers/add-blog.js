@@ -23,12 +23,22 @@ router.post('/addBlog', (req, res) => {
         author: req.body.author
     }
     datas.push(blog);
-    console.log(datas);
     res.status(201).end();
 });
 
 router.get('/getAllBlogs', (req, res) => {
     res.send({blogs: datas});
 });
+
+router.post('/modifyBlog', (req, res) => {
+     let newDatas = datas.map( d => {
+        if(d.id === req.body.blog.id) {
+            return req.body.blog;
+        }
+    });
+    datas = newDatas;
+    console.log(datas);
+    res.status(201).end();
+})
 
 module.exports = router;

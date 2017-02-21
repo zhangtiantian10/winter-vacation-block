@@ -9,6 +9,15 @@ export default class EditBlog extends Component {
         document.getElementById('author').value = blog.author;
     }
 
+    modifyBlog() {
+        const id = parseInt(this.props.location.query.id);
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+        const time = document.getElementById('time').value;
+        const author = document.getElementById('author').value;
+        this.props.onModify({id, title, content, time, author});
+    }
+
     render() {
         return <div className="col-md-6 col-md-offset-3">
             <div className="center">
@@ -41,7 +50,7 @@ export default class EditBlog extends Component {
                 </div>
             </form>
             <div className="center">
-                <button className="btn btn-default">保存</button>
+                <button className="btn btn-default" onClick={this.modifyBlog.bind(this)}>保存</button>
             </div>
         </div>
     }
