@@ -37,8 +37,14 @@ router.post('/modifyBlog', (req, res) => {
         }
     });
     datas = newDatas;
-    console.log(datas);
     res.status(201).end();
-})
+});
+
+router.post('/deleteBlog', (req, res) => {
+    const blog = datas.find(d => d.id === req.body.id);
+    const index = datas.indexOf(blog);
+    datas.splice(index, 1);
+    res.status(201).send({blogs: datas});
+});
 
 module.exports = router;

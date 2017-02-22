@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         getAllBlogs: () => {
             dispatch(actions.getAllBlogs());
+        },
+        deleteBlog: (id) => {
+            dispatch(actions.deleteBlog(id));
         }
     };
 };

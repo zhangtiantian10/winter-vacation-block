@@ -4,6 +4,14 @@ const getAllBlogs = () => {
     }
 };
 
+const deleteBlog = (id) => {
+    return {
+        type: "DELETE_BLOG",
+        id: id
+    }
+};
+
 module.exports = {
-    getAllBlogs
+    getAllBlogs,
+    deleteBlog
 };
