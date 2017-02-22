@@ -2,12 +2,6 @@ import {connect} from 'react-redux';
 import Register from '../components/register';
 import actions from '../actions/add-useName';
 
-const mapStateToProps = (state) => {
-    return {
-        isSaveSuccess: state.addUseName.isSaveSuccess
-    }
-};
-
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit: (data) => {
