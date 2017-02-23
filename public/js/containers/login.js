@@ -9,9 +9,9 @@ Login.PropTypes = {
 
 const mapDispatchProps = (dispatch) => {
     return {
-        onJude: (userName, password)=> {
+        onJude: (useName, password)=> {
             console.log('dispatch');
-            dispatch({type: "LOGIN", userName, password});
+            dispatch({type: "LOGIN", useName, password});
         }
     }
 };

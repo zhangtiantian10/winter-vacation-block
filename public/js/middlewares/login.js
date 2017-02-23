@@ -4,7 +4,7 @@ export default store=> next=> action => {
     console.log("store");
     if (action.type === "LOGIN") {
         console.log("action");
-        if(action.userName === ''){
+        if(action.useName === ''){
             alert('用户名不能为空')
         }
         else if (action.password === '') {
@@ -12,7 +12,7 @@ export default store=> next=> action => {
         }
         else {
             request.post('/addUser/section')
-                .send({name:action.userName, password:action.password})
+                .send({useName:action.useName, password:action.password})
                 .end((err, res) => {
                     next({type: 'LOGIN', status: res.body.value})
                 });
