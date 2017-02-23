@@ -11,6 +11,13 @@ export default class Home extends Component {
         browserHistory.push(path);
     }
 
+    deleteBlog(id) {
+        let isdelete = confirm('是否删除？');
+        if(isdelete) {
+            this.props.deleteBlog(id);
+        }
+    }
+
     render() {
         return <div>
             <div className="col-md-10 col-md-offset-1">
@@ -25,7 +32,7 @@ export default class Home extends Component {
                             </h3>
                             <div className="iconColor">
                                 <span className="glyphicon glyphicon-trash" data-toggle="tooltip"
-                                      data-placement="bottom" title="删除"></span>
+                                      data-placement="bottom" title="删除" onClick={this.deleteBlog.bind(this, b.id)}></span>
                                 <div className="iconColor">
                                     <span className="glyphicon glyphicon-pencil" data-toggle="tooltip"
                                           data-placement="bottom" title="编辑"
